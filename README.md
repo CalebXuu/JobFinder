@@ -3,10 +3,21 @@
                                                                            Oct 17, 2017
 
 #Group-12
+
+
 #Kevin Kyungmin Lee, ST# 301271170
+
+
 #Lu Li (Lousie) , ST#301270735
+
+
 #Yuzhuo Zhang(Clement), ST#301240246
+
+
+
 #Yingwen Ren(Bells),  ST#301270090
+
+
 
 #Web application name:    Job Engine
 
