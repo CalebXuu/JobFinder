@@ -8,6 +8,56 @@
   <%= javascript_include_tag  '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js' %>
   <%= csrf_meta_tags %>
 </head>
+<style>
+    body {
+        background-color: #bce8f1;
+    }
+
+    .my-navbar {
+        /*margin-bottom: 0px;*/
+    }
+
+    .my-panel {
+        width: 400px;
+        min-height: 400px;
+        margin: 100px auto;
+        text-align: center;
+    }
+
+    .my-panel .logo {
+        margin: 10px auto;
+        width: 128px;
+    }
+
+    .my-panel .form {
+        width: 256px;
+        margin: 0 auto;
+    }
+
+    .my-panel input[type="text"], input[type="password"] {
+        border-radius: 3px;
+        border: none;
+        color: #333333;
+        font-size: 16px;
+        height: 46px;
+        margin-bottom: 5px;
+        padding: 13px 12px;
+        width: 100%;
+    }
+
+    .btn-login {
+        background-color: #00BBFF;
+        border-color: #00BBFF;
+        border-width: 0;
+        color: #FFFFFF;
+        display: block;
+        margin: 0 auto;
+        padding: 15px 50px;
+        text-transform: uppercase;
+        width: 100%;
+    }
+
+</style>
 <body>
 <nav class="navbar navbar-default navbar-static-top navbar-inverse">
   <div class="container">
@@ -19,30 +69,15 @@
         <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
       </li>
 
-      <!-- <li>
-        <a href="https://devcenter.heroku.com/articles/how-heroku-works"><span class="glyphicon glyphicon-user"></span> How Heroku Works</a>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Getting Started Guides <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="https://devcenter.heroku.com/articles/getting-started-with-ruby">Getting Started with Ruby on Heroku</a></li>
-            <li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Getting Started with Node on Heroku</a></li>
-            <li><a href="https://devcenter.heroku.com/articles/getting-started-with-php">Getting Started with PHP on Heroku</a></li>
-            <li><a href="https://devcenter.heroku.com/articles/getting-started-with-python">Getting Started with Python on Heroku</a></li>
-            <li><a href="https://devcenter.heroku.com/articles/getting-started-with-java">Getting Started with Java on Heroku</a></li>
-            <li><a href="https://devcenter.heroku.com/articles/getting-started-with-go">Getting Started with Go on Heroku</a></li>
-            <li><a href="https://devcenter.heroku.com/articles/getting-started-with-clojure">Getting Started with Clojure on Heroku</a></li>
-            <li><a href="https://devcenter.heroku.com/articles/getting-started-with-scala">Getting Started with Scala on Heroku</a></li>
-            <li class="divider"></li>
-            <li><a href="https://devcenter.heroku.com/articles/getting-started-with-heroku-and-connect-without-local-dev">Getting Started on Heroku with Heroku Connect</a></li>
-            <li><a href="https://devcenter.heroku.com/articles/getting-started-with-jruby">Getting Started with Ruby on Heroku (Microsoft Windows)</a></li>
-          </ul>
-      </li> -->
+
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="navbar-right">
-        <%= link_to 'login', users_path %>
-
+        <% if current_new_user %>
+          <%= link_to 'logout', destroy_new_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'login', new_user_session_path %>
+        <% end %>
       </li>
     </ul>
   </div>
