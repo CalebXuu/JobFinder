@@ -9379,3 +9379,4 @@ Processing by Devise::SessionsController#new as HTML
   Rendered /Users/kevinlee/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.2ms)
   Rendered /Users/kevinlee/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (97.2ms)
 Completed 200 OK in 162ms (Views: 139.5ms | ActiveRecord: 4.0ms)
+  [1m[36mNewUser Load (1.1ms)[0m  [1mSELECT  "new_users".* FROM "new_users"  ORDER BY "new_users"."id" ASC LIMIT 1[0m
