@@ -1,0 +1,11 @@
+<div class="edit_comment">
+	<h1 id="editcomment">Edit Posts</h1>
+<%= simple_form_for @post do |f| %>
+<%= f.input :job_title, label: "Job Title" %>
+<%= f.input :company, label: "company" %>
+<%= f.input :location, label: "location" %>
+<%= f.input :your_name, label: "your_name" %>
+<%= f.input :phone, label: "phone" %>
+<%= f.button :submit%>
+<% end %>
+</div>

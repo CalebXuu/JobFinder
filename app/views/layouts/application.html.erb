@@ -1,67 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <link rel="stylesheet" href="application.css" type="text/css" />
-  
-  <title>Job Engine</title>
+  <title>Ruby Getting Started on Heroku</title>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag  '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag  '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js' %>
   <%= csrf_meta_tags %>
 </head>
+<style>
+    body {
+        background-color: #bce8f1;
+    }
+
+    .my-navbar {
+        /*margin-bottom: 0px;*/
+    }
+
+    .my-panel {
+        width: 400px;
+        min-height: 400px;
+        margin: 100px auto;
+        text-align: center;
+    }
+
+    .my-panel .logo {
+        margin: 10px auto;
+        width: 128px;
+    }
+
+    .my-panel .form {
+        width: 256px;
+        margin: 0 auto;
+    }
+
+    .my-panel input[type="text"], input[type="password"] {
+        border-radius: 3px;
+        border: none;
+        color: #333333;
+        font-size: 16px;
+        height: 46px;
+        margin-bottom: 5px;
+        padding: 13px 12px;
+        width: 100%;
+    }
+
+    .btn-login {
+        background-color: #00BBFF;
+        border-color: #00BBFF;
+        border-width: 0;
+        color: #FFFFFF;
+        display: block;
+        margin: 0 auto;
+        padding: 15px 50px;
+        text-transform: uppercase;
+        width: 100%;
+    }
+
+</style>
 <body>
-	 <script src="application.js" type="text/javascript"></script>
 <nav class="navbar navbar-default navbar-static-top navbar-inverse">
   <div class="container">
     <ul class="nav navbar-nav">
       <li class="active">
+        <a ><span ></span> JOB ENGINE</a>
+      </li>
+      <li class="active">
         <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
       </li>
- 
-      <li class="dropdown">
 
-          <ul class="dropdown-menu" role="menu">
-            </ul>
-      </li>
 
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="navbar-right">
-
-   
-    <% if user_signed_in? %>
-    Logged in as <strong><%= current_user.email %></strong>.
-    <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-
- 
-
-
-  <% else %>
-<li>
-<div class="dropdown">
-  <button class="dropbtn">Login</button>
-  <div class="dropdown-content">
-    <%= link_to "Sign up", new_user_registration_path %>
-    <%= link_to "Login", new_user_session_path %>
-  </div>
-</div>
- </li>      
-
-  <% end %>
-
-        <li>
-        <a href="/"> About</a>
-      </li>
-
+        <% if current_new_user %>
+          <%= link_to 'logout', destroy_new_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'login', new_user_session_path %>
+        <% end %>
       </li>
     </ul>
   </div>
 </nav>
 
 <%= yield %>
-
 
 </body>
 </html>

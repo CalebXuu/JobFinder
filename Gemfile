@@ -1,11 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.4.1'
-gem 'devise'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
-gem 'devise'
-gem 'activeadmin'
-#gem 'activeadmin'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'rails_12factor', group: :production
@@ -27,13 +24,58 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+# # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+# gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'devise'
+gem 'rails_admin'
 
 gem 'puma'
+
+
+gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
+
+
+# bundle exec rake doc:rails generates the API under doc/api.
+gem 'sdoc', '~> 0.4.0', group: :doc
+
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.7'
+
+
+
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
+
+# make sample users with semi-realistic names and email addresses
+#gem 'faker',          '1.6.3'
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+end
+
+group :development do
+	gem 'sqlite3'
+end
+
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
+end
+
+#google calendar
+gem 'google-api-client', '~> 0.9', require: 'google/apis/calendar_v3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

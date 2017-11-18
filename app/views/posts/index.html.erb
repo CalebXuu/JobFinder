@@ -1,0 +1,12 @@
+<% @posts.each do |post| %>
+	<div class="col-md-4">
+		<div class="message">
+			<h2 class="message-title"><%= post.job_title %></h2>
+      <h2 class="message-title"><%= post.company %></h2>
+			<%= link_to "show", post, class: "btn-custom" %>
+		</div>
+	</div>
+<% end %>
+<br>
+
+<!-- <%= link_to 'New Post', new_post_path %> -->

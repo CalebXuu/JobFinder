@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  
-  ActiveAdmin.routes(self)
-  devise_for :users
-  resources :widgets
+  resources :posts
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :new_users
+  resources :users
+  #resources :widgets
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -12,6 +13,29 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+
+
+
+
+  get '/post' => 'posts#index'
+  # get '/post_search', to: redirect('/posts')
+  get '/posts/new', to: redirect('/posts')
+  post 'post' => 'posts#create'
+  # match '/post_search' => 'posts#post_search', :via => :post
+  match '/post/new' => 'posts#new', :via => :post
+
+
+
+
+
+
+  # get '/calendar' => 'calendar#index'
+  # resources :calendar
+  #
+  # # Api definition
+  # namespace :api, defaults: { format: :json }, constraints: { subdomain: 'api' }, path: '/'  do
+  #   # We are going to list our resources here
+  # end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,0 +1,16 @@
+<div class="col-md-8 col-md-offset-2">
+	<div class="new_message">
+	<h1 class="new-msg-header">Post new jobs</h1>
+<%= simple_form_for @post do |f| %>
+	<%= f.input :job_title, label: "Job Title", class: "title"  %>
+  <%= f.input :company, class: "title"  %>
+  <%= f.input :location, class: "title"  %>
+  <%= f.input :your_name,  class: "title"  %>
+  <%= f.input :phone,  class: "title" %>
+	<%= f.button :submit, class: "submit_btn" %>
+<% end %>
+</div>
+
+</div>
+
+<%= link_to 'Back', posts_path %>
