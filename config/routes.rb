@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get '/calendar' => 'calendar#index'
+
+
+  # Api definition
+namespace :api, defaults: { format: :json }, constraints: { subdomain: 'api' }, path: '/'  do
+  # We are going to list our resources here
+end
+
   resources :posts
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
