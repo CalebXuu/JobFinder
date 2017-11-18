@@ -1,48 +1,207 @@
-<!DOCTYPE html>
-<html>
-  <head>
-
-
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all',
-                                              'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
-    <![endif]-->
-  </head>
-  <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <%= link_to "sample app", '#', id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",   '#' %></li>
-            <li><%= link_to "Help",   '#' %></li>
-            <li><%= link_to "Log in", '#' %></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div class="container">
-      <%= yield %>
-    </div>
-  </body>
-</html>
-
-<div class="center jumbotron">
-  <h1>Welcome to the Job-searching engine</h1>
-
-  <h2>
-    This is the home page for the
-    <a href="http://www.railstutorial.org/">Job Searching page</a>
-    sample application.
-  </h2>
-
-  <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
+<!-- <div class="jumbotron text-center">
+  <div class="container">
+    <a href="/" class="lang-logo">
+      <img src="<%= asset_path('lang-logo.png') %>">
+    </a>
+    <h1>Getting Started with Ruby on Heroku</h1>
+    <p>This is a sample Ruby application deployed to Heroku. It's a reasonably simple app - but a good foundation for understanding how to get the most out of the Heroku platform.</p>
+    <a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-ruby"><span class="glyphicon glyphicon-flash"></span> Getting Started with Ruby</a>
+    <a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/ruby-getting-started"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
+  </div>
 </div>
+<div class="container">
+  <div class="alert alert-info text-center" role="alert">
+    To deploy your own copy, and learn the fundamentals of the Heroku platform, head over to the <a href="https://devcenter.heroku.com/articles/getting-started-with-ruby" class="alert-link">Getting Started with Ruby on Heroku</a> tutorial.
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-info-sign"></span> How this sample app works</h3>
+      <ul>
+        <li>This app was deployed to Heroku, either using Git or by using <a href="https://github.com/heroku/ruby-getting-started">Heroku Button</a> on the repository.</li>
 
-<%= link_to image_tag("rails.png", alt: "Rails logo"), 'http://rubyonrails.org/' %>
+        <li>When Heroku received the source code, it fetched all the dependencies in the <a href="https://github.com/heroku/ruby-getting-started/blob/master/Gemfile">Gemfile</a>, creating a deployable slug.</li>
+        <li>The platform then spins up a dyno, a lightweight container that provides an isolated environment in which the slug can be mounted and executed.</li>
+        <li>You can scale your app, manage it, and deploy over <a href="https://addons.heroku.com/">150 add-on services</a>, from the Dashboard or CLI.</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
+      <ul>
+        <li>If you are following the <a href="https://devcenter.heroku.com/articles/getting-started-with-ruby">Getting Started</a> guide, then please head back to the tutorial and follow the next steps!</li>
+        <li>If you deployed this app by deploying the Heroku Button, then in a command line shell, run:</li>
+        <ul>
+          <li><code>git clone https://github.com/heroku/ruby-getting-started.git</code> - this will create a local copy of the source code for the app</li>
+          <li><code>cd ruby-getting-started</code> - change directory into the local source code repository</li>
+          <li><code>heroku git:remote -a &lt;your-app-name></code> - associate the Heroku app with the repository</li>
+          <li>You'll now be set up to run the app locally, or <a href="https://devcenter.heroku.com/articles/getting-started-with-ruby#push-local-changes">deploy changes</a> to Heroku</li>
+        </ul>
+      </ul>
+      <h3><span class="glyphicon glyphicon-link"></span> Helpful Links</h3>
+      <ul>
+        <li><a href="https://www.heroku.com/home">Heroku</a></li>
+        <li><a href="https://devcenter.heroku.com/">Heroku Dev Center</a></li>
+        <li><a href="https://devcenter.heroku.com/articles/getting-started-with-ruby">Getting Started with Ruby on Heroku</a></li>
+        <li><a href="https://devcenter.heroku.com/articles/deploying-ruby-and-rails">Deploying Ruby Apps on Heroku</a></li>
+        <li><a href="https://devcenter.heroku.com/articles/getting-started-with-jruby">Getting Started with Ruby on Heroku (Microsoft Windows)</a></li>
+      </ul>
+    </div>
+  </div> <!-- row -->
+   <!-- <div class="alert alert-info text-center" role="alert">
+    Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps.
+  </div>
+</div> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
 
 
+        .my-content {
+            background: no-repeat url(/bg.jpg);
+            color: white;
+            min-height: 400px;
+        }
+
+        .wrap {
+            margin: 0 auto;
+            max-width: 940px;
+            padding: 0 30px;
+        }
+
+        .features {
+            margin: 0 0 60px;
+        }
+
+        .features-columns {
+            margin: 0 -25px;
+        }
+
+        .feature {
+            /*float: left;*/
+            /*width: 33.33%;*/
+            text-align: center;
+            font-size: 14px;
+            line-height: 21px;
+            padding: 0 25px;
+            margin: 0 0 50px;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .feature img {
+            margin-bottom: 10px;
+        }
+
+        .feature h4 {
+            font-size: 18px;
+            line-height: 20px;
+            text-transform: uppercase;
+            color: #2b414d;
+            font-weight: bold;
+            position: relative;
+            margin: 0 0 42px;
+        }
+
+        .feature h4:after {
+            position: absolute;
+            bottom: -22px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 22px;
+            height: 2px;
+            background-color: #cbcfd1;
+            content: "";
+            -moz-transition: all 0.15s linear;
+            -o-transition: all 0.15s linear;
+            -webkit-transition: all 0.15s linear;
+            transition: all 0.15s linear;
+        }
+
+        .feature:hover h4:after {
+            background-color: #3db39e;
+        }
+        .mycontainer{
+
+          padding-left: 57px;
+        }
+        .headddd
+        {
+
+          padding-top: 110px;
+padding-left: 303px;
+font-size: 61px;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<!--center-->
+<div class="my-content">
+    <div >
+        <h1 class="headddd">Job Engine</h1>
+        <h3 class="mycontainer">Finding high quality job is not a challenge anymore.</h2>
+    </div>
+</div>
+<!--/center-->
+
+<!--func-->
+<section class="features">
+    <!-- wrap -->
+    <div class="wrap">
+        <!-- features-columns -->
+        <div class="features-columns clearfix">
+            <!--one-->
+            <div class="feature">
+                <div class="feature-img"><img src="/international.png" />
+                <h4>International Jobs</h4>
+                <p>Opptunities all around the world.</p>
+                <a class="btn" href="#">Learn More »</a>
+            </div>
+            <!-- /one -->
+            <!--two-->
+            <div class="feature">
+                <div class="feature-img"><img src="/school.png"></div>
+                <h4> Co-op</h4>
+                <p>More specific information for Co-op students.</p>
+                <a class="btn" href="#">Learn More »</a>
+            </div>
+            <!-- /two -->
+            <!--three-->
+            <div class="feature">
+                <div class="feature-img"><img src="/doller.png"></div>
+                <h4>Salary Ranking</h4>
+                <p>Want high salary job?</p>
+                <a class="btn" href="#">Learn More »</a>
+            </div>
+            <!-- /three -->
+        </div>
+        <!-- /features-columns -->
+    </div>
+    <!-- /wrap -->
+</section>
+<!--/func-->
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

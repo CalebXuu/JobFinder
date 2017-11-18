@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #bce8f1;
+        }
+        .my-panel {
+            width: 400px;
+            min-height: 400px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .my-panel .logo {
+            margin: 10px auto;
+            width: 128px;
+        }
+
+        .my-panel .form {
+            width: 256px;
+            margin: 0 auto;
+        }
+
+        .my-panel input[type="text"], input[type="password"] {
+            border-radius: 3px;
+            border: none;
+            color: #333333;
+            font-size: 16px;
+            height: 46px;
+            margin-bottom: 5px;
+            padding: 13px 12px;
+            width: 100%;
+        }
+
+        .btn-login {
+            background-color: #00BBFF;
+            border-color: #00BBFF;
+            border-width: 0;
+            color: #FFFFFF;
+            display: block;
+            margin: 0 auto;
+            padding: 15px 50px;
+            text-transform: uppercase;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<!--center-->
+<div class="panel panel-default my-panel">
+    <div class="panel-body">
+        <div class="logo">
+            <img src="./img/o1.png">
+        </div>
+
+        <div class="form">
+            <form method="post" action="/login" accept-charset="UTF-8">
+                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+                <input class="btn btn-default btn-login" type="button" value="LOG IN">
+                <h6>New To Job Engine?</h6>
+              <h3><%= link_to 'Create An Account', new_user_path %></h3>
+            </form>
+        </div>
+    </div>
+</div>
+<!--/center-->
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>
