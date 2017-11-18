@@ -23,10 +23,14 @@ default: &default
 
 development:
   <<: *default
+<<<<<<< HEAD
   database: cmpt276
   username: cmpt276
   password: jewel521
   host: localhost
+=======
+  database: lilu
+>>>>>>> ffa39109a54791d068ec3ec3a3237f3bb48c23e8
 
 test:
   <<: *default

@@ -50,21 +50,31 @@ ActiveRecord::Schema.define(version: 20171117034631) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "courses", force: :cascade do |t|
+<<<<<<< HEAD
     t.text     "course_id"
     t.text     "discription"
+=======
+    t.integer  "course_id"
+    t.text     "description"
+>>>>>>> ffa39109a54791d068ec3ec3a3237f3bb48c23e8
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "enrolls", force: :cascade do |t|
     t.integer  "student_id"
+<<<<<<< HEAD
     t.text     "course_id"
+=======
+    t.integer  "course_id"
+>>>>>>> ffa39109a54791d068ec3ec3a3237f3bb48c23e8
     t.string   "percentage"
     t.string   "lettergrade"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
+<<<<<<< HEAD
   create_table "people", force: :cascade do |t|
     t.string   "pname"
     t.integer  "age"
@@ -72,6 +82,8 @@ ActiveRecord::Schema.define(version: 20171117034631) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> ffa39109a54791d068ec3ec3a3237f3bb48c23e8
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.decimal  "price"
