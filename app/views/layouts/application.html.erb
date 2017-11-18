@@ -18,33 +18,43 @@
       <li class="active">
         <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
       </li>
-      <li>
-
-      </li>
+ 
       <li class="dropdown">
 
           <ul class="dropdown-menu" role="menu">
             </ul>
       </li>
+
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="navbar-right">
+
+   
     <% if user_signed_in? %>
     Logged in as <strong><%= current_user.email %></strong>.
-    <%= link_to 'Edit profile', edit_user_registration_path %> |
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-  <% else %>
+    <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 
+ 
+
+
+  <% else %>
+<li>
 <div class="dropdown">
   <button class="dropbtn">Login</button>
   <div class="dropdown-content">
-<%= link_to "Sign up", new_user_registration_path %>
+    <%= link_to "Sign up", new_user_registration_path %>
     <%= link_to "Login", new_user_session_path %>
   </div>
 </div>
-       
+ </li>      
 
   <% end %>
+
+        <li>
+        <a href="/"> About</a>
+      </li>
+
       </li>
     </ul>
   </div>
