@@ -1,0 +1,30 @@
+<div class="container" style=" border-style: solid; width: 700px ">
+<h11 style="    font-size: 8px;">Log in</h11>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+ <div class="actions" style="margin-left :200px ">
+      <%= f.input :email, required: true, autofocus: true ,autocomplete: "off" %>
+    </div>
+
+  <div class="actions" style="margin-left :200px">
+    <%= f.label :password %><br />
+     <%= f.password_field :password ,autofocus: true %>
+   </div>
+
+
+   <% if devise_mapping.rememberable? -%>
+   <div class="actions" style="margin-left :200px">
+     <%= f.check_box :remember_me %>
+     <%= f.label :remember_me %>
+   </div>
+ <% end -%>
+
+
+
+  <div class="actions" style="margin-left :200px">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+<div class="actions" style="margin-left :200px"> <%= render "devise/shared/links" %></div>
+</div>

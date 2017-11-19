@@ -14,6 +14,7 @@
  *= require_self
  */
 
+
  .container {
   padding: 0;
   width: 100%;
@@ -46,11 +47,11 @@
 input[type=text],
 input[type=email],
 input[type=password] {
-  color: #666666;
+  color: 	#FFFFFF;
   width: 100%;
   border: 1px solid #E6E6E6;
   border-radius: 0px;
-  height: 60px;
+  
   margin: 6px auto;
   text-indent: 10px;
 }

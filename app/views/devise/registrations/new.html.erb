@@ -1,0 +1,32 @@
+<div class="container" style=" border-style: solid; width: 700px">
+<h11>Sign up</h11>
+
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="actions" style="margin-left :150px">
+     <%= f.label :email %><br />
+     <%= f.email_field :email, autofocus: true %>
+   </div>
+
+
+   <div class="actions" style="margin-left :150px">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+
+
+        <div class="actions" style="margin-left :150px">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+  <div class="filed" style="margin-left :150px">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+</div>
