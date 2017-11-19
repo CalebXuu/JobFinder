@@ -1,3 +1,14 @@
+<% if @posts.blank? %>
+  <h1 style="text-align: center;"> Search Results </h1>
+  <h3 style="text-align: center;"> No Results Found </h3>
+  <h5 style="text-align: center;"> <label><%= params[:search]%></label><%=render text: " did not match."%> </h5>
+  <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Job Title, Company Name or Location",
+   style: 'margin-left: 420px; width: 300px; color: black;'%>
+  <%= submit_tag "Search", style: 'color: black;' %>
+  <% end %>
+<% end %>
+
 <% @posts.each do |post| %>
 	<div class="col-md-4">
 		<div class="message">

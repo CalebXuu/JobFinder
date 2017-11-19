@@ -33,6 +33,15 @@
             <h1 class="mb-5">WELCOME TO JOB ENGINE</h1>
             <p >Come And Find Your Best Job Ever!</p>
           </div>
+
+          <div class="col-sm-10 col-lg-8 col-xl-7 mx-auto">
+            <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Job Title, Company Name or Location",
+             style: 'float: left-middle; width: 50%; color: black;'%>
+            <%= submit_tag "Search", style: 'color: black;' %>
+            <% end %>
+          </div>
+
           <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
             <form>
               <div class="form-row">
@@ -54,7 +63,13 @@
               <i  class="icon-screen-desktop m-auto text-primary"></i>
               </div>
               <!-- <h3 href='/post'> -->
-              <h3> <a href='/post'>Post JOB</a></h3>
+
+              <% if current_new_user %>
+                 <h3> <%= link_to 'Post Job', posts_path %></h3>
+              <% else %>
+                 <h3> <a href='/new_users/sign_in'>Post Job</a></h3>
+              <% end %>
+
               <p class="lead mb-0">Are you employer? </p>
             </div>
           </div>
