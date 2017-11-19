@@ -8,8 +8,7 @@ namespace :api, defaults: { format: :json }, constraints: { subdomain: 'api' }, 
 end
 
   resources :posts
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   devise_for :new_users
   resources :users
   #resources :widgets

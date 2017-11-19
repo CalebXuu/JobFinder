@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.1'
 #Use bootstrap
-gem 'rails_admin'
+
 gem 'bootstrap-sass', '~> 3.3.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
