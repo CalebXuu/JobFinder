@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="application.css" type="text/css" />
   <title>Job Engine</title>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag  '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' %>
@@ -62,9 +63,7 @@
 <nav class="navbar navbar-default navbar-static-top navbar-inverse">
   <div class="container">
     <ul class="nav navbar-nav">
-      <li class="active">
-        <a ><span ></span> JOB ENGINE</a>
-      </li>
+ 
       <li class="active">
         <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
         </li>
@@ -76,7 +75,15 @@
        <% if current_new_user %>
           <%= link_to 'logout', destroy_new_user_session_path, method: :delete %>
         <% else %>
-          <%= link_to 'login', new_user_session_path %>
+          <li>
+             <div class="dropdown">
+               <button class="dropbtn">Login</button>
+                 <div class="dropdown-content">
+                  <%= link_to "Sign up", new_new_user_registration_path %>
+                  <%= link_to "Login", new_user_session_path %>
+                 </div>
+              </div>
+            </li>    
         <% end %>
       </li>
     </ul>
