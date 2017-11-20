@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get '/calendar' => 'calendar#index'
   get '/aboutUs' => 'welcome#aboutUs'
   get '/welcome' => 'welcome#index'  

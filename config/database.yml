@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: cmpt276_test
+  database: cmpt276
   username: cmpt276
   password: thecmpt276Passw0rd
   host: localhost
@@ -61,7 +61,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  
+
   database: cmpt276_test
   username: cmpt276
   password: thecmpt276Passw0rd

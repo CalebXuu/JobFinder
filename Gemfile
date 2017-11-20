@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
-ruby '2.3.1'
+ruby '2.4.1'
 #Use bootstrap
+
+gem 'activeadmin', '~> 1.0.0.pre4'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
