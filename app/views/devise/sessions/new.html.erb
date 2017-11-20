@@ -3,19 +3,20 @@
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
- <div class="form-group" style="margin-left:300px; width: 100px;">
+ <div class="actions" style="margin-left :150px; font-color:#000000">
 
-      <%= f.input :email, required: true, autofocus: true ,autocomplete: "off"%>
+   <%= f.label :email %><br />
+   <%= f.email_field :email, autofocus: true %>
  </div>
 
-  <div class="form-group" style="margin-left:300px; width: 100px;">
+<div class="actions" style="margin-left :150px; font-color:#000000">
      <%= f.label :password %><br />
-     <%= f.password_field :password, autofocus: true, autocomplete: "off", class: "form-control"%>
+     <%= f.password_field :password, autofocus: true, autocomplete: "off"%>
   </div>
 
 
    <% if devise_mapping.rememberable? -%>
-   <div class="form-group" style="margin-left :300px">
+  <div class="actions" style="margin-left :150px; font-color:#000000">
      <%= f.check_box :remember_me %>
      <%= f.label :remember_me %>
    </div>
@@ -23,9 +24,9 @@
 
 
 
-  <div class="form-group" style="margin-left :300px">
+<div class="actions" style="margin-left :150px; font-color:#000000">
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-<div class="form-group" style="margin-left :300px"> <%= render "devise/shared/links" %></div>
+<div class="actions" style="margin-left :150px; font-color:#000000"> <%= render "devise/shared/links" %></div>
 </div>
