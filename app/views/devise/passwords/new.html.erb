@@ -1,14 +1,15 @@
 <div class="container" style=" border-style: solid; width: 700px ">
-<h11>Forgot your password?</h11>
+<h6 style="text-align:center; font-size: 35px;">Forgot your password?</h6>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="actions" style="margin-left :200px">
-    <%= f.input :email, required: true, autofocus: true %>
+    <div class="actions" style="margin-left :150px; font-color:#000000">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
   </div>
 
-<div class="actions" style="margin-left :200px">
+  <div class="actions" style="margin-left :150px; font-color:#000000">
     <%= f.submit "Send me reset password instructions" %>
   </div>
 <% end %>
