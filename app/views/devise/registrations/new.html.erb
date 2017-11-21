@@ -6,13 +6,13 @@
   <%= f.error_notification %>
 
   <div class="actions" style="margin-left :150px; font-color:#000000">
-     <%= f.label :email %><br />
+     <%= f.label :email ,style: 'color: black;' %><br />
      <%= f.email_field :email, autofocus: true %>
    </div>
 
 
    <div class="actions" style="margin-left :150px">
-      <%= f.label :password %>
+      <%= f.label :password,style: 'color: black;'%>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
@@ -21,7 +21,7 @@
 
 
         <div class="actions" style="margin-left :150px">
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :password_confirmation, style: 'color: black;'%><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
   <div class="filed" style="margin-left :150px">

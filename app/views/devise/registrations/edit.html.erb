@@ -5,22 +5,22 @@
   <%= f.error_notification %>
 
     <div class="actions" style="margin-left :150px; font-color:#000000">
-      <%= f.label :email %><br />
+      <%= f.label :email ,style: 'color: black;' %><br />
       <%= f.email_field :email, autofocus: true %>
 </div>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 <div class="actions" style="margin-left :150px; font-color:#000000">
-  <%= f.label :new_password %><br />
+  <%= f.label :new_password,style: 'color: black;'  %><br />
     <%= f.password_field :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
   </div>
   <div class="actions" style="margin-left :150px; font-color:#000000">
-      <%= f.label :password_confirmation %><br />
+      <%= f.label :password_confirmation,style: 'color: black;'  %><br />
     <%= f.password_field :password_confirmation, required: false %>
   </div>
   <div class="actions" style="margin-left :150px; font-color:#000000">
-      <%= f.label :current_password %><br />
+      <%= f.label :current_password ,style: 'color: black;' %><br />
     <%= f.password_field :current_password, hint: "we need your current password to confirm your changes", required: true %>
   </div>
 
