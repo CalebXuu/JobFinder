@@ -63,7 +63,7 @@
 <nav class="navbar navbar-default navbar-static-top navbar-inverse">
   <div class="container">
     <ul class="nav navbar-nav">
- 
+
       <li class="active">
         <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
         </li>
@@ -72,18 +72,25 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="navbar-right">
-       <% if current_new_user %>
-          <%= link_to 'logout', destroy_new_user_session_path, method: :delete %>
+        <% if current_new_user %>
+        <div class="dropdown">
+          <button class="dropbtn">My account</button>
+                          <div class="dropdown-content">
+
+        <%= link_to 'Edit profile', edit_new_user_registration_path %> 
+        <%= link_to "Logout", destroy_new_user_session_path, method: :delete %>
+      </div>
+</div>
         <% else %>
           <li>
              <div class="dropdown">
                <button class="dropbtn">Login</button>
-                 <div class="dropdown-content">
-                  <%= link_to "Sign up", new_new_user_registration_path %>
-                  <%= link_to "Login", new_user_session_path %>
-                 </div>
+                               <div class="dropdown-content">
+                                <%= link_to "Sign up", new_new_user_registration_path %>
+                                <%= link_to "Login", new_user_session_path %>
+                               </div>
               </div>
-            </li>    
+            </li>
         <% end %>
       </li>
     </ul>
