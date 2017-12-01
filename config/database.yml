@@ -61,9 +61,10 @@ development:
 test:
   <<: *default
 
-  database: cmpt276_test
-  username: cmpt276
-  password: thecmpt276Passw0rd
+  # database: cmpt276_test
+  # username: cmpt276
+  # password: thecmpt276Passw0rd
+  database: template1
   host: localhost
 
 

@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  resources :sessions
+  resources :users
+  resources :users
+  resources :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get '/calendar' => 'calendar#index'
   get '/aboutUs' => 'welcome#aboutUs'
-  get '/welcome' => 'welcome#index'  
+  get '/welcome' => 'welcome#index'
 
 
   # Api definition
@@ -14,7 +18,6 @@ end
   resources :posts
 
   devise_for :new_users
-  resources :users
   #resources :widgets
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -24,8 +27,16 @@ end
 
   root 'welcome#index'
 
+  get '/signup'  => 'users#new'
+
+  get 'admin' => 'users#admin'
+  resources :users
 
 
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  get 'logout' => 'sessions#destroy'
+  resources :sessions
 
 
   get '/post' => 'posts#index'
