@@ -49,6 +49,22 @@ ActiveRecord::Schema.define(version: 20171130164555) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "courses", force: :cascade do |t|
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "course_id"
+  end
+
+  create_table "enrolls", force: :cascade do |t|
+    t.integer  "student_id"
+    t.string   "course_id"
+    t.string   "percentage"
+    t.string   "lettergrade"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "new_users", force: :cascade do |t|
     t.boolean  "admin"
     t.string   "email",                  default: "", null: false
@@ -82,6 +98,14 @@ ActiveRecord::Schema.define(version: 20171130164555) do
   create_table "sessions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "student_id"
   end
 
   create_table "users", force: :cascade do |t|
