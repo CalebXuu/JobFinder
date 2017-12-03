@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get '/calendar' => 'calendar#index'
   get '/aboutUs' => 'welcome#aboutUs'
   get '/welcome' => 'welcome#index'
+  get '/location' => 'location#location'
+  
+  get 'maps' => 'maps#index'
 
 
   # Api definition
