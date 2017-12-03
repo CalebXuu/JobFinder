@@ -29,21 +29,20 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
 
-     @post = current_user.post.build
-    # @post = Post.new
+
+    @post = Post.new
   end
 
   # GET /posts/1/edit
   def edit
-     @textbook = current_user.post.find(params[:id])
   end
 
   # POST /posts
   # POST /posts.json
   def create
 
-    @post = current_user.post.build(post_params)
-    # @post = Post.new(post_params)
+    # @post = current_user.post.build(post_params)
+    @post = Post.new(post_params)
 
 		if @post.save
 			redirect_to '/post', notice: "Post Added!"
@@ -56,7 +55,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    if @post.update(message_params)
+    if @post.update(post_params)
 			redirect_to post_path
 		else
 			render 'edit'
@@ -100,7 +99,7 @@ end
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-   post = current_user.post.find(params[:id])
+  #  post = current_user.post.find(params[:id])
     @post.destroy
     # respond_to do |format|
     #   format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
