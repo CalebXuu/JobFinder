@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/aboutUs' => 'welcome#aboutUs'
   get '/welcome' => 'welcome#index'
   get '/location' => 'location#location'
-  
+
   get 'maps' => 'maps#index'
 
 
@@ -33,14 +33,15 @@ end
   get '/signup'  => 'users#new'
 
   get 'admin' => 'users#admin'
+  get 'edit'  => 'users#edit'
   resources :users
 
 
-  get 'login' => 'sessions#new'
-  post 'login' => 'sessions#create'
-  get 'logout' => 'sessions#destroy'
-  resources :sessions
 
+    get 'login', :to => 'sessions#new'
+    post 'login', :to => 'sessions#create'
+    get 'logout', :to => 'sessions#destroy'
+    resources :sessions
 
   get '/post' => 'posts#index'
   # get '/post_search', to: redirect('/posts')
@@ -50,7 +51,12 @@ end
   match '/post/new' => 'posts#new', :via => :post
 
 
-
+  resources :users, defaults: { format: 'html' }, only: [:new, :create, :edit, :update, :index, :destroy] do
+      member do
+        get :profile
+        get :settings
+      end
+    end
 
 
 

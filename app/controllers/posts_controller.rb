@@ -1,8 +1,15 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
- layout 'post'
- before_action :require_user
+
+
+  # before_action :require_user
+	before_action :find_post, only: [:show, :edit, :update, :destroy]
+
+  layout 'post'
+
+
+
+
   # GET /posts
   # GET /posts.json
   def index
@@ -22,24 +29,26 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
 
-
-    @post = Post.new
+     @post = current_user.post.build
+    # @post = Post.new
   end
 
   # GET /posts/1/edit
   def edit
+     @textbook = current_user.post.find(params[:id])
   end
 
   # POST /posts
   # POST /posts.json
   def create
 
-
-    @post = Post.new(post_params)
+    @post = current_user.post.build(post_params)
+    # @post = Post.new(post_params)
 
 		if @post.save
-			redirect_to '/post'
+			redirect_to '/post', notice: "Post Added!"
 		else
+      @errors = @post.errors.full_messages
 			render 'new'
 		end
   end
@@ -91,6 +100,7 @@ end
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+   post = current_user.post.find(params[:id])
     @post.destroy
     # respond_to do |format|
     #   format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
@@ -101,12 +111,16 @@ end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
+    # def set_post
+    #   @post = Post.find(params[:id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:job_title, :company, :location, :your_name, :phone)
     end
+
+    def find_post
+			@post = Post.find(params[:id])
+	end
 end

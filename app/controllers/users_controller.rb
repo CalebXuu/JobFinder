@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
+  # layout false
+
   before_action :require_user, :require_admin, only: [:admin, :destroy]
-  before_action :require_no_login, only: [:index]
   before_action :require_admin,     only: :destroy
   skip_before_filter :verify_authenticity_token, :only => :destroy
 
@@ -16,9 +17,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      flash[:success] = "Welcome to the Job App!"
       session[:user_id] = @user.id
       redirect_to '/'
     else
+      flash[:notice] = "Form is invalid"
       redirect_to '/signup'
     end
   end
@@ -28,25 +31,36 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+   @user = User.find(params[:id])
   end
 
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
-      redirect_to '/admin'
+      flash[:success] = "Edit updated"
+      # redirect_to '/admin'
     else
       render 'edit'
     end
   end
 
   def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
-    redirect_to '/admin'
+    @user.destroy
+   respond_to do |format|
+     format.html { redirect_to users_url, notice: 'User was successfully destroyed'}
+   end
+    # redirect_to '/admin'
   end
 
+
+  # # GET /users/:id/profile
+  # def profile
+  #   if (session[:user_id].to_s != params[:id])
+  #     redirect_to(:controller => 'users', :action => 'profile', :id => session[:user_id])
+  #   else
+  #     render "profile"
+  #   end
+  # end
 
   private
   def user_params

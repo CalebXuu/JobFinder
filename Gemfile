@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 #Use bootstrap
 
+gem "cancan"
+
 gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
