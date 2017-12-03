@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
 
 
-  # before_action :require_user
+  before_action :require_user
 	before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   layout 'post'

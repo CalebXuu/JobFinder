@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   resources :users
   resources :users
   resources :users
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  # devise_for :admin_users, ActiveAdmin::Devise.config
+  # ActiveAdmin.routes(self)
   get '/calendar' => 'calendar#index'
   get '/aboutUs' => 'welcome#aboutUs'
   get '/welcome' => 'welcome#index'
@@ -14,13 +14,13 @@ Rails.application.routes.draw do
 
 
   # Api definition
-namespace :api, defaults: { format: :json }, constraints: { subdomain: 'api' }, path: '/'  do
-  # We are going to list our resources here
-end
-
-  resources :posts
-
-  devise_for :new_users
+# namespace :api, defaults: { format: :json }, constraints: { subdomain: 'api' }, path: '/'  do
+#   # We are going to list our resources here
+# end
+#
+#   resources :posts
+#
+#   devise_for :new_users
   #resources :widgets
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -38,10 +38,9 @@ end
 
 
 
-    get 'login', :to => 'sessions#new'
-    post 'login', :to => 'sessions#create'
-    get 'logout', :to => 'sessions#destroy'
-    resources :sessions
+  get 'login', :to => 'sessions#new'
+  post 'login', :to => 'sessions#create'
+  get 'logout', :to => 'sessions#logout'
 
   get '/post' => 'posts#index'
   # get '/post_search', to: redirect('/posts')

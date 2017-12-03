@@ -38,16 +38,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "Edit updated"
-      # redirect_to '/admin'
+      redirect_to '/admin'
     else
       render 'edit'
     end
   end
 
   def destroy
+    @user = User.find(params[:id])
     @user.destroy
-    flash[:success] = "User deleted"
-    # redirect_to '/admin'
+    redirect_to '/'
   end
 
 
