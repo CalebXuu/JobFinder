@@ -22,6 +22,13 @@ module SessionsHelper
 		redirect_to '/' unless current_user.email == "admin@email.com"
 	end
 
+  def display_notice_and_alert
+    msg = ''
+    msg << (content_tag :div, notice, :class => "notice") if notice
+    msg << (content_tag :div, alert, :class => "alert") if alert
+    sanitize msg
+  end
+
 
   # Logs out the current user.
   def log_out
