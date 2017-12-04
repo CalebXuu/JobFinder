@@ -5,9 +5,8 @@ div.search {
     float: left;
     height: 700px;
     margin-right: 10px;
-    width: 220px;
+    width: 215px;
     border: 1px solid;
-
 }
 
 div.result {
@@ -25,7 +24,7 @@ div.result {
     <h3>Advanced Search</h3>
     <%= search_form_for @search do |f| %>
     <div class="field">
-      <%= f.label :job_title_cont, "Job Title" %>
+      <%= f.label :job_title_cont, "Keywords" %>
       <%= f.text_field :job_title_cont %>
     </div>
     <div class="field">
@@ -36,13 +35,20 @@ div.result {
       <%= f.label :location_cont, "Location" %>
       <%= f.text_field :location_cont %><br /><br />
       <iframe
-        width="180px"
-        height="180px"
+        width="195px"
+        height="195px"
         frameborder="0"
         style="border:0;left:0;right:0;bottom:0;top:150px;"
-        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAv7LUS6dItcwF0FayMC4DRh6nfIW6RBt0&q="
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAv7LUS6dItcwF0FayMC4DRh6nfIW6RBt0&q=Vancouver"
          >
       </iframe>
+    </div>
+    <div class="field">
+      <label>Salary</label> <br/>
+      <%= f.label :salary_gteq, "Min: " %>
+      <%= f.text_field :salary_gteq, style: 'width: 50px;' %>
+      <%= f.label :salary_lteq, " ~ Max: " %>
+      <%= f.text_field :salary_lteq, style: 'width: 50px;' %>
     </div>
     <div class="actions"> <%= f.submit "Search" %> </div>
     <% end %>
