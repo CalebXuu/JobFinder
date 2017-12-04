@@ -23,8 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: template1
-
+  database: cmpt276
+  username: cmpt276
+  password: jewel521
   host: localhost
 
 

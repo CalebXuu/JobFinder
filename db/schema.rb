@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204090114) do
+ActiveRecord::Schema.define(version: 20171204210802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,16 +49,6 @@ ActiveRecord::Schema.define(version: 20171204090114) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "adsearches", force: :cascade do |t|
-    t.string   "keywords"
-    t.string   "category"
-    t.string   "location"
-    t.decimal  "min_salary"
-    t.decimal  "max_salary"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "locations", force: :cascade do |t|
     t.string   "address"
     t.float    "latitude"
@@ -92,9 +82,12 @@ ActiveRecord::Schema.define(version: 20171204090114) do
     t.string   "location"
     t.string   "your_name"
     t.integer  "phone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "user_id"
+    t.text     "description"
+    t.decimal  "salary"
+    t.string   "job_type"
   end
 
   create_table "sessions", force: :cascade do |t|

@@ -1,8 +1,12 @@
 <div class="col-md-8 col-md-offset-2">
 	<div class="message-show">
 		<!-- <h2><%= @post.job_title %></h2> -->
-		<p class="message-desc">job: <%= @post.job_title %> company: <%= (@post.company)%> location<%=(@post.location) %></p>
-    <p class="message-des">contact: <%= @post.your_name %>  phone number:<%= (@post.phone) %></p>
+		<p class="message-desc">Job: <%= @post.job_title %><br/>
+			 Company: <%= (@post.company)%><br/> Location: <%= (@post.location) %><br/></p>
+    <p class="message-des"> Name: <%= @post.your_name %> <br/>  Phone number:<%= (@post.phone) %><br/></p>
+		<br/><p class="message-des"> Description: <br/> <%= @post.description %> <br /><br/></p>
+		<br/><p> Salary: $<%= @post.salary %></p>
+		<p class="message-des"> Job Type: <%=@post.job_type%> </p>
 
 		<hr>
 
