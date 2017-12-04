@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Top Searched Company List</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Company Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locations.each do |location| %>
+      <tr>
+        <td><%= location.address %></td>
+        <td><%= link_to 'View In Map', location %></td>
+            </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Search New Company Location', new_location_path,class: "btn btn-default", style:"margin-left:800px;" %>

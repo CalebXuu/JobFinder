@@ -85,8 +85,6 @@
 		var clientId = '508124447943-r6mq4b5s8m322apn52v0dteqhumess6d.apps.googleusercontent.com';
 		var apiKey = 'AIzaSyDqC3sFe6TAL5GPjH-rLw2b41FrEIEUk-8';
 		var scopes = 'https://www.googleapis.com/auth/calendar';
-
-
 		/* Function invoked when the client javascript library is loaded */
 		function handleClientLoad() {
 		  console.log("Inside handleClientLoad ...");
@@ -134,12 +132,10 @@
 		    createEvent(userChoices);
 		}
 		function getUserInput(){
-
 		  var date = document.querySelector("#date").value;
 		  var startTime = document.querySelector("#start").value;
 		  var endTime = document.querySelector("#end").value;
 		  var eventDesc = document.querySelector("#event").value;
-
 		  // check input values, they should not be empty
 		  if (date=="" || startTime=="" || endTime=="" || eventDesc==""){
 		    alert("All your input fields should have a meaningful value.");
@@ -165,7 +161,6 @@
 		      'calendarId': 'primary',
 		      'resource': resource
 		    });
-
 		    // execute the request and do something with response
 		    request.execute(function(resp) {
 		      console.log(resp);

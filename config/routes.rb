@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :locations
   resources :sessions
   resources :users
   resources :users
@@ -8,9 +9,9 @@ Rails.application.routes.draw do
   get '/calendar' => 'calendar#index'
   get '/aboutUs' => 'welcome#aboutUs'
   get '/welcome' => 'welcome#index'
-  get '/location' => 'location#location'
+ get '/location' => 'welcome#location'
 
-  get 'maps' => 'maps#index'
+  # get 'maps' => 'maps#index'
 
 
   # Api definition
@@ -34,7 +35,7 @@ Rails.application.routes.draw do
 
   get 'admin' => 'users#admin'
   get 'edit'  => 'users#edit'
-  
+
   resources :users
   resources :posts
 

@@ -1,0 +1,28 @@
+<%= simple_form_for(@location) do |f| %>
+  <%= f.error_notification %>
+
+<div class="newone" style="margin-left :150px; font-color:#000000">
+    <%= f.label :Company_Address,style:"width:100%;",require: true %><br />
+
+    <%= f.text_field :address %>
+
+
+  </div>
+
+  <div class="actions" style="margin-left :150px; font-color:#000000">
+      <%= f.label :Latitude_Optional,style:"width:100%;" %><br />
+      <%= f.text_field :latitude %>
+  </div>
+
+    <div class="actions" style="margin-left :150px; font-color:#000000">
+
+    <%= f.label :Longitude_Optional,style:"width:100%;" %><br />
+    <%= f.text_field :longitude %>
+  </div>
+
+
+
+  <div class="actions" style="margin-left :150px; font-color:#000000">
+    <%= f.submit "Search" %>
+  </div>
+<% end %>

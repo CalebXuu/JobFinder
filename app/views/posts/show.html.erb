@@ -9,10 +9,12 @@
 
 		 <div class="links btn-group">
 			<%= link_to "Back", '/posts.1', class: "btn btn-default" %>
+			<%= link_to 'Search company location', new_location_path,class: "btn btn-default" ,style:"margin-left:50px;" %>
+
               <% if current_user.id == @post.user_id %>
 				<%= link_to "Edit", edit_post_path(@post), class: "btn btn-default" %>
 				<%= link_to "Delete",  post_path(@post),method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %>
-		     <% end %>    
+		     <% end %>
 		</div>
 	</div>
-</div>
+	</div>

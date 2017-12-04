@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
-ruby '2.3.5'
+ruby '2.4.1'
 #Use bootstrap
 
 gem "cancan"
-
+gem 'geocoder'
 gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
@@ -90,3 +90,5 @@ gem 'google-api-client', '~> 0.9', require: 'google/apis/calendar_v3'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'mocha', group: :test
