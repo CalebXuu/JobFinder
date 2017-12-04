@@ -34,8 +34,9 @@ Rails.application.routes.draw do
 
   get 'admin' => 'users#admin'
   get 'edit'  => 'users#edit'
+  
   resources :users
-
+  resources :posts
 
 
   get 'login', :to => 'sessions#new'
