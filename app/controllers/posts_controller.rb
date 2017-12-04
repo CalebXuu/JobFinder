@@ -8,17 +8,11 @@ class PostsController < ApplicationController
   layout 'post'
 
 
-
-
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
-    if params[:search]
-      @posts = Post.search(params[:search]).order("created_at DESC")
-    else
-      @posts = Post.all.order('created_at DESC')
-    end
+    @search = Post.ransack(params[:q])
+    @posts = @search.result
   end
 
   # GET /posts/1

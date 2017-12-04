@@ -1,21 +1,70 @@
-<% if @posts.blank? %>
-  <h1 style="text-align: center;"> Search Results </h1>
-  <h3 style="text-align: center;"> No Results Found </h3>
-  <h5 style="text-align: center;"> <label><%= params[:search]%></label><%=render text: " did not match."%> </h5>
-  <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Job Title, Company Name or Location",
-   style: 'margin-left: 420px; width: 300px; color: black;'%>
-  <%= submit_tag "Search", style: 'color: black;' %>
-  <% end %>
-<% end %>
+<style>
+div.search {
+    padding-top: 30px;
+    padding-left: 10px;
+    float: left;
+    height: 700px;
+    margin-right: 10px;
+    width: 220px;
+    border: 1px solid;
 
-<% @posts.each do |post| %>
-	<div class="col-md-4">
-		<div class="message">
-			<h2 class="message-title"><%= post.job_title %></h2>
-      <h2 class="message-title"><%= post.company %></h2>
-			<%= link_to "show", post, class: "btn-custom" %>
-		</div>
-	</div>
-<% end %>
-<br>
+}
+
+div.result {
+    padding-top: 30px;
+    height: 700px;
+    width: 500px;
+    overflow: hidden;
+    border: 1px solid;
+}
+</style>
+
+
+<body>
+  <div class="search">
+    <h3>Advanced Search</h3>
+    <%= search_form_for @search do |f| %>
+    <div class="field">
+      <%= f.label :job_title_cont, "Job Title" %>
+      <%= f.text_field :job_title_cont %>
+    </div>
+    <div class="field">
+      <%= f.label :company_cont, "Company" %>
+      <%= f.text_field :company_cont %>
+    </div>
+    <div class="field">
+      <%= f.label :location_cont, "Location" %>
+      <%= f.text_field :location_cont %><br /><br />
+      <iframe
+        width="180px"
+        height="180px"
+        frameborder="0"
+        style="border:0;left:0;right:0;bottom:0;top:150px;"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAv7LUS6dItcwF0FayMC4DRh6nfIW6RBt0&q="
+         >
+      </iframe>
+    </div>
+    <div class="actions"> <%= f.submit "Search" %> </div>
+    <% end %>
+
+  </div>
+  <div class="result">
+      <% if @posts.blank? %>
+        <h1 style="text-align: center;"> Search Results </h1>
+        <h3 style="text-align: center;"> No Results Found </h3>
+        <h5 style="text-align: center;"> <label><%= params[:search]%></label><%=render text: " did not match."%> </h5>
+        <p style="text-align: center;">Please refine search and try again.</p>
+      <% end %>
+
+      <% @posts.each do |post| %>
+      	<div class="col-md-4">
+      		<div class="message">
+      			<h2 class="message-title"><%= post.job_title %></h2>
+            <h2 class="message-title"><%= post.company %></h2>
+      			<%= link_to "show", post, class: "btn-custom" %>
+      		</div>
+      	</div>
+      <% end %>
+      <br>
+  </div>
+</body>
