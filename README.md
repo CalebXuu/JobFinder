@@ -1,5 +1,5 @@
 # CMPT276-jobproject
-# CMPT 276 Project Proposal                                        
+# CMPT 276                                         
                                                                            Oct 17, 2017
 
 #Group-12
@@ -81,8 +81,6 @@
 
 
 
-#Salary ranking section page 
-#sketch:
 
 
 
