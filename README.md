@@ -29,7 +29,7 @@
 
 #Looking for a job online is getting popular now.  Most online job searching basically ask employers to post a job or let users to search jobs through the whole website. It is not a easy work to users to find the jobs or the employees  which could match their requirement. In the other world, users has low efficiency  for getting the expected information.  
 
-#Not only the low efficiency of getting useful information but also bad user experience from the complex web page. Information searching website usually provides too much information on the welcome page which makes users feel the page is messy and they could not get the provided information.  Asking details of users’ demand might make users feel too much work to do which is a not great solution for web application development.  
+#The main problems of information searching website are that low efficiency of getting useful information and bad user experience from the complex web page, which would make user feel the page is messy and can’t get information as they need. Asking details of users’ demand might make users feel too much work to do which is a not great solution for web application development.  
 
 #Designing a unique online job searching is the goal of this group project. The goal of Job Engine web application is increasing the possibility for users to find the expected information by having clear and separating job models. 
 
