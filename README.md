@@ -23,8 +23,7 @@
 
 #Application Description: 
  
-#Our Application aims to provide a fantastic job matching experiences for employers who are hunting for a fully skilled employee and individuals who are seeking jobs and employment opportunities
-#Employers are able to  post job requirements with the necessary qualifications and skill sets, meanwhile,  job seeker could check the job basket for job posting through many different categories, once they have postings related to their qualifications and skill sets, they can post their resumes through the app and schedule for an interview.
+#Our application aims to provide the job matching for the employers who are hunting for fully skilled employees and employees who are seeking for job opportunity. Employers could post job with the necessary requirements, and job seeker could find the posting job which is related to their qualifications and skills through the job matching systems.
 
 #-How finding job problem solved currently (if at all)? 
 
