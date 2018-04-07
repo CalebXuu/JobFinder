@@ -81,8 +81,6 @@
 
 
 
-#Salary ranking section page 
-#sketch:
 
 
 
